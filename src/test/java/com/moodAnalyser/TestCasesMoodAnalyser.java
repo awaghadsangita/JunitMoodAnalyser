@@ -37,9 +37,10 @@ public class TestCasesMoodAnalyser {
     public void givenMessage_WithNull_ShouldReturnHappy() {
         AnalyseMood mood = new AnalyseMood(null);
         try {
-            Assert.assertEquals("HAPPY",mood.analyseMood());
+          mood.analyseMood(null);
+
         } catch (MoodAnalysisException e) {
-            e.printStackTrace();
+            Assert.assertEquals("Please enter proper message",e.getMessage());
         }
     }
 
@@ -70,7 +71,12 @@ public class TestCasesMoodAnalyser {
             analyseMood.analyseMood();
         } catch (MoodAnalysisException e) {
             Assert.assertEquals(MoodAnalysisException.ExceptionType.ENTERED_EMPTY,e.type);
-
         }
+    }
+
+    @Test
+    public void GivenAnalyseMoodClass_ShouldReturnMoodAnalyserObject() {
+        AnalyseMood moodAnalyser = MoodAnalyserFactory.createMoodAnalyser("I am in Happy mood");
+        Assert.assertEquals(new AnalyseMood("I am in Happy mood"),moodAnalyser);
     }
 }
