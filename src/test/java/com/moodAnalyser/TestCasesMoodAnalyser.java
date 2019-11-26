@@ -1,12 +1,14 @@
 package com.moodAnalyser;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 public class TestCasesMoodAnalyser {
 
     @Test
-    public void givenMessage_WhenProper_ReturnHappy() {
+    public void givenMessage_WhenProper_ReturnSad() {
         AnalyseMood mood = new AnalyseMood();
-        mood.analyseMood("I am in Happy Mood");
+        String sadMood = mood.analyseMood("I am in Sad Mood");
+        Assert.assertEquals("SAD",sadMood);
     }
 }
