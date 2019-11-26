@@ -76,7 +76,23 @@ public class TestCasesMoodAnalyser {
 
     @Test
     public void GivenAnalyseMoodClass_ShouldReturnMoodAnalyserObject() {
-        AnalyseMood moodAnalyser = MoodAnalyserFactory.createMoodAnalyser("I am in Happy mood");
-        Assert.assertEquals(new AnalyseMood("I am in Happy mood"),moodAnalyser);
+        AnalyseMood moodAnalyser = null;
+        try {
+            moodAnalyser = MoodAnalyserFactory.createMoodAnalyser("I am in Happy mood");
+        } catch (MoodAnalysisException e) {
+            Assert.assertEquals(new AnalyseMood("I am in Happy mood"),moodAnalyser);
+        }
+
+    }
+    @Test
+    public void GivenImproperClassName_ShouldThrowMoodAnalysisException() {
+        try {
+            AnalyseMood moodAnalyser=MoodAnalyserFactory.createMoodAnalyser();
+
+        } catch (MoodAnalysisException e) {
+            Assert.assertEquals(MoodAnalysisException.ExceptionType.NO_SUCH_CLASS.toString(),e.getMessage());
+        }
+
+
     }
 }
