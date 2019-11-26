@@ -13,7 +13,7 @@ public class AnalyseMood {
     public String analyseMood() throws MoodAnalysisException {
         try {
             if(this.message.length()==0){
-                return "Please enter proper message (mood can not be empty)";
+                throw new MoodAnalysisException(MoodAnalysisException.ExceptionType.ENTERED_EMPTY,"Please enter proper message");
 
             }else if (this.message.contains("SAD")) {
                 return "SAD";
@@ -21,7 +21,7 @@ public class AnalyseMood {
                 return "HAPPY";
             }
         } catch (NullPointerException e) {
-            return "HAPPY";
+            throw new MoodAnalysisException(MoodAnalysisException.ExceptionType.ENTERED_NULL,"Please enter proper message");
         }
     }
 }

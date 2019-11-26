@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.moodAnalyser.TestCasesMoodAnalyser" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-11-26T07:04:03" hostname="admin1-Lenovo-Product" time="0.001">
+<testsuite name="com.moodAnalyser.TestCasesMoodAnalyser" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-11-26T07:20:43" hostname="admin1-Lenovo-Product" time="0.001">
   <properties/>
   <testcase name="givenEmptyMood_Should_throwMoodAnalysisException" classname="com.moodAnalyser.TestCasesMoodAnalyser" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
