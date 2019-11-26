@@ -12,7 +12,10 @@ public class AnalyseMood {
 
     public String analyseMood() throws MoodAnalysisException {
         try {
-            if (this.message.contains("SAD")) {
+            if(this.message.length()==0){
+                return "Please enter proper message (mood can not be empty)";
+
+            }else if (this.message.contains("SAD")) {
                 return "SAD";
             } else {
                 return "HAPPY";
