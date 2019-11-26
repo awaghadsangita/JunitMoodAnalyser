@@ -14,8 +14,9 @@ public class AnalyseMood {
         if(this.message.contains("SAD"))
         {
             return "SAD";
-        }else{
-            return "HAPPY";
+        }else
+        {
+            return "SAD";
         }
     }
 }

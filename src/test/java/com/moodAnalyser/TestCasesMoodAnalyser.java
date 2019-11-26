@@ -10,12 +10,15 @@ public class TestCasesMoodAnalyser {
         AnalyseMood mood = new AnalyseMood("I am in SAD Mood");
         Assert.assertEquals("SAD",mood.analyseMood());
     }
-
     @Test
     public void givenMessage_WithAnyMood_ShouldReturnHappy() {
         AnalyseMood mood = new AnalyseMood("i am in any mood");
         Assert.assertEquals("HAPPY",mood.analyseMood());
     }
 
-
+    @Test
+    public void givenMessage_WithHappyMood_ShouldReturnSad() {
+        AnalyseMood mood = new AnalyseMood("i am in HAPPY mood");
+        Assert.assertEquals("SAD",mood.analyseMood());
+    }
 }
